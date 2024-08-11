@@ -1,14 +1,20 @@
-
-import React, { useContext } from 'react';
-import { TransactionContext } from '../contexts/TransactionContext';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
 
 const TransactionTotals: React.FC = () => {
-  const { state } = useContext(TransactionContext)!;
+  const transactions = useSelector((state: RootState) => state.transactions.transactions);
 
-  const incomeTotal = state.transactions.reduce((acc, transaction) =>
-    transaction.transactionType === 'Income' ? acc + transaction.amount : acc, 0);
-  const expensesTotal = state.transactions.reduce((acc, transaction) =>
-    transaction.transactionType === 'Expenses' ? acc + transaction.amount : acc, 0);
+  const incomeTotal = transactions.reduce(
+    (acc, transaction) =>
+      transaction.transactionType === 'Income' ? acc + transaction.amount : acc,
+    0
+  );
+  const expensesTotal = transactions.reduce(
+    (acc, transaction) =>
+      transaction.transactionType === 'Expenses' ? acc + transaction.amount : acc,
+    0
+  );
   const total = incomeTotal - expensesTotal;
 
   return (

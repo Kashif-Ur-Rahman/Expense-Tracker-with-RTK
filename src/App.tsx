@@ -1,4 +1,4 @@
-// src/App.tsx
+
 import React from 'react';
 import { TransactionProvider } from './contexts/TransactionContext';
 import Home from './pages/Home';

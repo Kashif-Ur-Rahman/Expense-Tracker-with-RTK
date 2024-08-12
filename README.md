@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# Expense-Tracker
+# Expense-Tracker-with-RTK
 This is the 'Expense Tracker with RTK' Project which I used the Redux Toolkit, use Reducer Hook, use State Hook with React JS, TypeScript and Tailwind CSS.
 =======
 # React + TypeScript + Vite
